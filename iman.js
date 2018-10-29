@@ -27,14 +27,15 @@ $(document).ready(function(){
         })
         e.preventDefault();
     });
+    var listItem = '';
     $.get( "http://localhost/whmcs/admin/addonmodules.php?module=addonmodule&controller=CompanySpecification&action=insex", { api: "api" } )
         .done(function( data ) {
             for (i=0; i<data.length ;i++) {
-                console.log(JSON.stringify(data[i].address));
+                listItem +="<option value='JSON.stringify(data[i].address)'>"+ (JSON.stringify(data[i].address)) +"</option>";
+                console.log(listItem)
+                $("#select-list").html(listItem)
             }
-
-            console.log( "Data Loaded: " + JSON.stringify(data[0].address) );
-        });
+            });
 
 })
 
