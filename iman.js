@@ -64,11 +64,12 @@ $(document).ready(function(){
 
 
 
-/*var total=$(".amt").text();
-total=total.replace(" USD","");
-total=total.substr(1);
-console.log(total);*/
-function move() {
+function changeHref()
+{
+    $("#Secondary_Sidebar-Actions-View_Cart").attr("href","/whmcs/cart.php?a=view&imanJafari=yes")
+}
+function move()
+{
     var elem = document.getElementById("myBar");
     var width = 1;
     var id = setInterval(frame, 10);
@@ -83,7 +84,9 @@ function move() {
 }
 var iman;
 iman = 0;
+var tax;
 $(document).ready(function(){
+    changeHref();
     $("#row-progress").hide();
     $("#iman").hide();
     var b = $("div#select-company");
